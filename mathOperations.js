@@ -33,7 +33,8 @@ function mathOperations(operator, num1, num2) {
             console.log("Specify a valid operator");
             return;
     }
-    console.log("(\'" + operator + "\', " + num1 + ", " + num2 + ") " + "--> " + res);
+    var operation = "(\'" + operator + "\', " + num1 + ", " + num2 + ") " + "--> " + res;
+    return operation;
 }
 
-mathOperations('/', 1, 2);
+console.log(mathOperations('/', 1, 2));

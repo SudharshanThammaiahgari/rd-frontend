@@ -12,18 +12,19 @@ DESCRIPTION:
     
 */
 
-function commaDelimited(arr) {
-    var delimitedString = "";
-    for (var i = 0; i < arr.length; i++) {
-        if (i != arr.length - 1) {
-            delimitedString += arr[i] + ",";
-        } else {
-            delimitedString += arr[i];
-        }
-    }
-    return delimitedString;
-}
+// function commaDelimited(arr) {
+//     var delimitedString = "";
+//     for (var i = 0; i < arr.length; i++) {
+//         if (i != arr.length - 1) {
+//             delimitedString += arr[i] + ",";
+//         } else {
+//             delimitedString += arr[i];
+//         }
+//     }
+//     return delimitedString;
+// }
 
 var arr = ["h", "o", "l", "a"]
-var res = commaDelimited(arr);
-console.log("\"" + res + "\"");
+console.log(arr.join(","));
+// var res = commaDelimited(arr);
+// console.log("\"" + res + "\"");
