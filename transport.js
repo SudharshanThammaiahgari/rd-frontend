@@ -15,26 +15,17 @@
     
  */
 
-import java.util.*;
-
-public class Transportation {
-    public static int calculateAmountForDays(int days) {
-        int res = 0;
-        int rentCost = 40;
-        if (days >= 7) {
-            res = rentCost * days - 50;
-        } else if (days >= 3) {
-            res = rentCost * days - 20;
-        } else {
-            res = rentCost * days;
-        }
-        return res;
+function calculateAmountForDays(days) {
+    var res = 0;
+    var rentCost = 40;
+    if (days >= 7) {
+        res = rentCost * days - 50;
+    } else if (days >= 3) {
+        res = rentCost * days - 20;
+    } else {
+        res = rentCost * days;
     }
-
-    public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        System.out.println(calculateAmountForDays(n));
-        sc.close();
-    }
+    return res;
 }
+
+console.log(calculateAmountForDays(8));
