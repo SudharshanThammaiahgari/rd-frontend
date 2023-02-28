@@ -3,7 +3,7 @@ function displayVideo(wrapper,item){
     let videoId=item.id.videoId;
     
     //Network call to api to get the view Count for every video:
-    let url="https://www.googleapis.com/youtube/v3/videos?key="+API_KEY+
+    let url="https://www.googleapis.com/youtube/v3/videos?key="+init.API_KEY+
                 "&id="+videoId+"&part=snippet,statistics";
 
     fetch(url)

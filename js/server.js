@@ -5,7 +5,7 @@ function fetchData(url) {
     })
     .then(function (data) {
         console.log("generateRecords  ", data);
-        displayVideos(videoList, data);
+        displayVideos(queryById("videos"), data);
     });
 }
 
@@ -13,7 +13,7 @@ function fetchDataFromYoutube(){
 
     let searchText=queryById("search").value;
     let url="https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults="
-                +maxResults+"&q="+searchText+"&type=video&key="+API_KEY;
+                +init.maxResults+"&q="+searchText+"&type=video&key="+init.API_KEY;
     
     fetchData(url);
 }
@@ -22,7 +22,7 @@ function generateRecords(pageToken){
     let searchText=queryById("search").value;
 
     let url="https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults="
-                +maxResults+"&q="+searchText+"&type=video&key="+API_KEY+"&pageToken="+pageToken;
+                +init.maxResults+"&q="+searchText+"&type=video&key="+init.API_KEY+"&pageToken="+pageToken;
     
     fetchData(url);
 }
@@ -46,5 +46,5 @@ function displayVideos(wrapper, data){
     
     let footerText=`<h2>Youtube Search</h2>`;
     queryById("footerText").innerHTML=footerText;
-    apply_pagination(paginList,data);
+    YTS.pagination.apply_pagination(queryById("pagination"),data);
 }

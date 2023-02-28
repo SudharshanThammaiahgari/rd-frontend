@@ -168,13 +168,13 @@ iframe{
         margin-bottom: 40px;
     }
     .btn-search{
-        border-radius: 5px 5px 5px 5px;
+        border-radius: 5px;
         padding: 5px 10px;
         margin-bottom: 15px;
         width: 100px;
     }
     .search-box{
-        border-radius: 5px 5px 5px 5px;
+        border-radius: 5px;
         padding: 5px 10px;
     }
     .video{
