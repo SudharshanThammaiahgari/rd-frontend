@@ -4,7 +4,6 @@ function fetchData(url) {
         return response.json();
     })
     .then(function (data) {
-        console.log("generateRecords  ", data);
         displayVideos(queryById("videos"), data);
     });
 }

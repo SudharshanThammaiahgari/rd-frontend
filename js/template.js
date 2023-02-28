@@ -11,12 +11,8 @@ function displayVideo(wrapper,item){
         return response.json();
     })
     .then(function(statsData) {
-
         let viewCount=statsData.items[0]?statsData.items[0].statistics.viewCount : 0;
-        console.log("viewCount "+viewCount);
-
         let videoData= videoTemplate(item,viewCount);
-
         wrapper.innerHTML+=videoData;
     });
 }

@@ -11,7 +11,6 @@ YTS.pagination = function (){
             prevBtn.addEventListener('click',function(){
                 if(currentPage>=2){
                     currentPage-=1;
-                    console.log("currentPage -->",currentPage);
                     generateRecords(data.prevPageToken);
                 }
             });
@@ -25,7 +24,6 @@ YTS.pagination = function (){
         
             nextBtn.addEventListener('click',function(){
                 currentPage+=1;
-                console.log("currentPage -->",currentPage);
                 generateRecords(data.nextPageToken);
             });
         
