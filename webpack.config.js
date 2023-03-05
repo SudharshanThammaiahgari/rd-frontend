@@ -34,7 +34,7 @@ module.exports={
                     loader:'babel-loader',
                     options:{
                         presets:['@babel/preset-env'],
-                        plugins: ["transform-remove-console"]
+                        plugins: [["transform-remove-console",{"exclude":["error","warn"]}]]
                     }
                 }
             }
