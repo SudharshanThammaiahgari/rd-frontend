@@ -1,0 +1,26 @@
+{
+  "name": "rd-frontend",
+  "version": "1.0.0",
+  "description": "This repository contains all the Home Tasks as part of the training.",
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sid624707/rd-frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sid624707/rd-frontend/issues"
+  },
+  "homepage": "https://github.com/Sid624707/rd-frontend#readme",
+  "dependencies": {
+    "jasmine-core": "^4.5.0",
+    "karma": "^6.4.1",
+    "karma-chrome-launcher": "^3.1.1",
+    "karma-coverage": "^2.2.0",
+    "karma-jasmine": "^5.1.0"
+  }
+}
