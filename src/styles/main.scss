@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    color: black;
+}
+
+.headLine{
+    border: 2px solid red;
+    padding: 5px;
+    margin: 5px;
+}
+
+img{
+    width: 150px;
+    height: 170px;
+    margin-right: 10px;
+    background-color: grey;
+}
+
+.container{
+    display: flex;
+}
+
