@@ -1,1 +1,2 @@
-This repository contains all the Home Tasks as part of the training.
+# Home Task 2.7
+Write unit tests for the app implemented as per Youtube Task.
