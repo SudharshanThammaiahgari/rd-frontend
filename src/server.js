@@ -1,8 +1,8 @@
 const express=require('express');
-const authenticate=require('./data-access/authenticate.js');
-const sequelize=require('./data-access/database.js');
-const userService=require('./routers/user.routes.js');
-require('./models/model.js');
+const authenticate=require('../data-access/authenticate.js');
+const sequelize=require('../data-access/database.js');
+const userService=require('../routers/user.routes.js');
+require('../models/model.js');
 
 const app=express();
 const PORT=process.env.PORT || 4690;
