@@ -1,6 +1,6 @@
-IN MEMORY CRUD REST SERVICE WITH VALIDATION
+# IN MEMORY CRUD REST SERVICE WITH VALIDATION
 
-PREREQUISITES:
+# PREREQUISITES:
 1. Install the latest LTS (Long Term Support) version of Node.js (https://nodejs.org/en/), by any available means (.exe, nvm, brew, etc.).
 2. Check in the console (terminal) that the Node.js installation was done       properly by running the following commands node -v or node -version.
 3. Create a repo for your homework tasks on Github (https://github.com/) or git.epam.com.
