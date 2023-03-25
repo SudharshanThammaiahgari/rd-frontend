@@ -20,7 +20,7 @@
     "build": "npm run clean && babel src routers routers/controllers services models data-access config --out-dir build",
     "eslint": "npx eslint ./build/*",
     "lint:fix": "npx eslint --fix",
-    "dev1": "nodemon server.js"
+    "dev1": "nodemon ./src/server.js"
   },
   "repository": {
     "type": "git",
