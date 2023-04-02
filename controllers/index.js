@@ -1,7 +1,29 @@
 const {validateSchema}=require("../validator/index");
 const {v4:uuidv4}=require('uuid');
 
-const users=[];
+const users=[
+    {
+        "login": "Harry Potter",
+        "password": "harry123",
+        "age": 25,
+        "id": "e2184253-9b8e-4fec-80a5-2e2f9cf0f777",
+        "isDeleted": false
+    },
+    {
+        "login": "Ron Weasely",
+        "password": "ron345",
+        "age": 24,
+        "id": "7aa7cf5d-1aa5-4e0c-a8c6-9cf86ffe2a60",
+        "isDeleted": false
+    },
+    {
+        "login": "Hermoine Granger",
+        "password": "herm789",
+        "age": 25,
+        "id": "356a5303-141d-48ac-8b63-655e4e8ee912",
+        "isDeleted": true
+    }
+];
 
 const findUser = function (req,res){
     const userId=req.params.id;
@@ -23,20 +45,21 @@ const findUser = function (req,res){
 const createUser = function (req,res){
     const userData=req.body;
     userData["id"]=uuidv4();
-    
+    userData["isDeleted"]=false;
     // Perform validation of req.body data
+
     const {error,value} = validateSchema(userData);
     if(error){
-        console.log(error);
         res.status(400).json(error.details);
     }
-    try {
-        users.push(userData);
-        return res.status(200).json(value);
-    } catch (error) {
-        return res.status(400).json(error);
+    else{
+        try {
+            users.push(value);
+            return res.status(200).json(value);
+        } catch (error) {
+            return res.status(400).json(error);
+        }
     }
-    
 }
 
 
@@ -47,7 +70,7 @@ const updateUser = function (req,res){
         let currUser=users.find(function(user){
             return user.id===userId && user.isDeleted!==true;
         });
-        if(currUser){
+        if(currUser && !currUser.isDeleted){
             currUser.login=userData.login || currUser.login;
             currUser.password=userData.password || currUser.password;
             currUser.age=userData.age || currUser.age;
@@ -55,7 +78,6 @@ const updateUser = function (req,res){
     
             const {error,value} = validateSchema(currUser);
             if(error){
-                console.log(error);
                 return res.status(400).json(error.details);
             }else{
                 return res.status(200).json(value);
@@ -71,11 +93,11 @@ const updateUser = function (req,res){
 
 const autoSuggestUsers = function (req,res){
     const loginSubstring=req.params.loginSubstring;
-    const limit=req.params.limit;
+    const limit=Number(req.params.limit);
     const matchedUsers=[];
     try {
         users.forEach(function(user){
-            if(user.login.includes(loginSubstring) && user.isDeleted!==true){
+            if((user.login.includes(loginSubstring)) && (!user.isDeleted)){
                 matchedUsers.push(user);
             }
         });
@@ -83,9 +105,10 @@ const autoSuggestUsers = function (req,res){
         if(matchedUsers.length===0){
             return res.status(400).json({"message":"No users matching the substring"});
         }
-    
-        matchedUsers.sort(compare);
-        return res.status(200).json(matchedUsers.slice(0,limit));
+        else{        
+            matchedUsers.sort(compare);
+            return res.status(200).json(matchedUsers.slice(0,limit));
+        }
 
     } catch (error) {
         return res.status(400).json(error);
@@ -98,14 +121,13 @@ function compare(a,b){
     return 0;
 }
 
-
 const deleteUser = function (req,res){
     const userId=req.params.id;
     try {
         let user = users.find(function(user){
             return user.id===userId && user.isDeleted!==true
         });
-        if(user){
+        if(user && !user.isDeleted){
             user.isDeleted=true;
             return res.status(200).json("Deleted Successfully");
         }else{

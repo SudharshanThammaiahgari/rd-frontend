@@ -7,7 +7,7 @@ app.use("/user",userService);
 
 app.use(express.json());
 
-const PORT = process.env.PORT || 4590;
+const PORT = process.env.PORT || 4790;
 
 app.get("/",function(req,res){
     res.send("Hello World");
@@ -20,3 +20,5 @@ const start=function(){
 }
 
 start();
+
+module.exports=app;

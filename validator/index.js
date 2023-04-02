@@ -7,11 +7,11 @@ const validator=function(schema){
 }
 
 const userSchema=Joi.object({
-    id:Joi.string().required(),
+    id:Joi.string(),
     login:Joi.string().required(),
     password:Joi.string().min(3).max(10).alphanum().required(),
     age:Joi.number().integer().min(4).max(130).required(),
-    isDeleted:Joi.boolean().required()
+    isDeleted:Joi.boolean()
 });
 
 exports.validateSchema=validator(userSchema);
