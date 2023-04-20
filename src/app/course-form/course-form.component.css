@@ -1,0 +1,29 @@
+label,input{
+    display: block;
+}
+
+input.title{
+    width: 100%;
+}
+
+textarea{
+    height: 100px;
+    width: 100%;
+}
+
+.btn-outline-primary{
+    padding: 5px 30px;
+    margin:10px 20px 10px 0px;
+}
+
+.description{
+    text-align: justify;
+}
+
+.minutes{
+    display: inline;
+}
+
+.hours{
+    margin: 0px 20px;
+}

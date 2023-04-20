@@ -1,0 +1,8 @@
+<div class="container-fluid my-5">
+    <h1>Available Video Courses</h1>
+    <div class="container-fluid" *ngFor="let course of courses">
+        <app-course [course]="course"></app-course>
+    </div>
+
+    <p>{{render()}}</p>
+</div>
