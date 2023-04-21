@@ -1,0 +1,12 @@
+<div class="container-fluid my-3" *ngFor="let user of users | filterUser : btnName">
+    <!-- <div class="card border-success border-2">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">{{user.firstName}} {{user.lastName}} </h5>
+            <button type="button" 
+                    class="btn btn-sm btn-danger align-self-end" (click)="deActivate(user)">
+                Deactivate
+            </button>
+        </div>
+    </div> -->
+    <app-user [user]="user" [callBack]="callBack" [btnName]="btnName"></app-user>
+</div>
