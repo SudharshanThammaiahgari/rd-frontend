@@ -1,5 +1,22 @@
-label,input{
+.container,.container-fluid{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+ 
+ label,input{
     display: block;
+}
+
+label{
+    font-weight: 600;
+}
+
+p{
+    margin: 0px;
+    font-size: 13px;
+}
+
+.d-flex{
+    align-items: baseline;
 }
 
 input.title{
@@ -9,11 +26,22 @@ input.title{
 textarea{
     height: 100px;
     width: 100%;
+    padding-left: 10px;
 }
 
-.btn-outline-primary{
-    padding: 5px 30px;
-    margin:10px 20px 10px 0px;
+.save{
+    background: #67A300;
+    color: white;
+    margin: 0px 10px;
+    font-weight: 600;
+    padding: 6px 20px;
+}
+
+.cancel{
+    background: rgba(18,21,35,0.20);
+    margin: 0px 10px;
+    font-weight: 600;
+    padding: 6px 20px;
 }
 
 .description{
@@ -26,4 +54,22 @@ textarea{
 
 .hours{
     margin: 0px 20px;
+}
+
+.newCourse{
+    margin: auto 50px;
+    padding: 10px 0px;
+}
+
+.card{
+    border: none;
+    box-shadow: 0 1px 2px 0 rgba(29,30,38,0.10), 0 2px 10px 0 rgba(29,30,38,0.15);
+    background: #fff;
+    padding: 15px 20px;
+}
+
+.header-bg {
+	background: #303240;
+    color: white;
+    padding:15px 15px;
 }

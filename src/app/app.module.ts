@@ -7,6 +7,11 @@ import { VideoCoursesComponent } from './video-courses/video-courses.component';
 import { CourseComponent } from './course/course.component';
 import { CourseFormComponent } from './course-form/course-form.component';
 import { TimeHoursPipe } from './pipes/time-hours.pipe';
+import { LoginComponent } from './login/login.component';
+import { DisplayCoursesComponent } from './display-courses/display-courses.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { BreadCrumbComponent } from './bread-crumb/bread-crumb.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +19,12 @@ import { TimeHoursPipe } from './pipes/time-hours.pipe';
     VideoCoursesComponent,
     CourseComponent,
     CourseFormComponent,
-    TimeHoursPipe
+    TimeHoursPipe,
+    LoginComponent,
+    DisplayCoursesComponent,
+    HeaderComponent,
+    FooterComponent,
+    BreadCrumbComponent
   ],
   imports: [
     BrowserModule,

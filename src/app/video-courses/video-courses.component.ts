@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { FormType } from 'src/formType';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-video-courses',
@@ -9,15 +9,13 @@ import { FormType } from 'src/formType';
 })
 
 export class VideoCoursesComponent {
-  @Input() courses?:FormType[];
 
-  constructor(){
-
+  constructor(private router: Router,private route:ActivatedRoute,private cdr:ChangeDetectorRef){
+    
   }
 
-  render() : string{
-    console.log("I am from Video Courses");
-    return "Hello World";
+  renderVideoCourses(){
+    console.log("render Video Courses Page");
   }
 
 }
